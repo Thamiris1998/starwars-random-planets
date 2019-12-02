@@ -17,8 +17,8 @@ public class StarWarsController {
         this.starWarsService = starWarsService;
     }
 
-    @GetMapping("randomPlanet")
-    public ResponseEntity<PlanetModel> randPlanet() {
+    @GetMapping("random/planet")
+    public ResponseEntity<PlanetModel> randomPlanet() {
         try {
             PlanetModel model = starWarsService.randomPlanet();
             return ResponseEntity.ok(model);
