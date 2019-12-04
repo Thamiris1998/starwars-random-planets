@@ -24,17 +24,17 @@ public class StarWarsService {
         this.uri = uri;
     }
 
-    @Cacheable("countPlanets")
+    @Cacheable
     public Planets getCountAllPlanets() {
         return template.getForObject(uri, Planets.class);
     }
 
-    @Cacheable("planet")
+    @Cacheable
     public Planet getByIdPlanet(int idPlanet) {
         return template.getForObject(uri + "/" + idPlanet, Planet.class);
     }
 
-    @Cacheable("film")
+    @Cacheable
     public Film getFilmByUrl(String urlFilm) {
         return template.getForObject(urlFilm, Film.class);
     }
